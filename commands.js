@@ -97,7 +97,10 @@ module.exports.uniq = function (fileName) {
 module.exports.curl = function (url) {
 	request(url, function (err, resp, body) {
 		if(err) throw err;
-		process.stdout.write('\n' + resp);
+		process.stdout.write('\n' + resp.body);
+		// for (key in resp) {
+		// 	JSON
+		// }
 		process.stdout.write('\nprompt > ');
 	});
 }
